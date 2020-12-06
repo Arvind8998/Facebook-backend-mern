@@ -37,7 +37,6 @@ const conn = mongoose.createConnection(mongoUri, {
 })
 
 let gfs;
-
 mongoose.connection.once('open',()=>{
     const changeStream  = mongoose.connection.collection('posts').watch();
     changeStream.on('change',(change)=>{
